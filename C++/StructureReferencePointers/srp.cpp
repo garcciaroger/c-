@@ -65,7 +65,10 @@ int main(){
     truck.model = "F-150";
     truck.trim = "Raptor R";
     truck.year = 2023;
+  
 
+
+  
     cout << mustang.model << " " << mustang.trim << " " << mustang.year << endl;
     cout << truck.model << " " << truck.trim << " " << truck.year << endl;
 
