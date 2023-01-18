@@ -2,59 +2,56 @@
 #include <string> 
 using namespace std;
 
-void returnGrades(int* userGrades, int size);
-//void sortArray(int userGrades[20], int size);
-
+void populateArray(double [], int);
+void sortArray(double [], int);
+// double calculateMedian(double[], int, double);
 
 int main(){
+    int numOfGrades;
+    double arrGrade[numOfGrades] = {};
 
-    int arraySize = 0;
-    //Validate no more than 20 grades.
-    cout <<"Enter no more than 20 grades. ";
-    cin >> arraySize;
+    cout << "Enter total number of Grades. No more than 20. " << endl;
+    cin >> numOfGrades;
+
     do{
-        if(arraySize > 20){
-            cout << "Please enter no more than 20 grades " << endl;
-            cin >> arraySize;
+        if(numOfGrades < 0 || numOfGrades > 20){
+            cout << "Please Enter a total of no more than 20 grades! : " << endl;
+            cin >> numOfGrades;
         }
-    }while(arraySize > 20 || arraySize < 0);
+    }while(numOfGrades < 0 || numOfGrades > 100);
 
-   int userGrades[20];
+    //Populate Array
+    populateArray(arrGrade, numOfGrades);
+     //sort array
+    sortArray(arrGrade, numOfGrades);
+    //display sorted array
+    for(int i = 0; i < numOfGrades; i++){
+        cout << arrGrade[i] << endl;
 
-
-    returnGrades(userGrades, arraySize);
-    //sortArray(userGrades, arraySize);//Sort the array
-    
-    for(int i = 0; i < userGrades[arraySize]; i++){
-        cout << userGrades[i] << endl;
     }
 
-    return 0;
 }
 
-//This part if the program the user enters the 
-//number of grades and then it's stored into 
-//array
-void returnGrades(int* user, int size){
-    for(int i = 0; i < size; i++){
-        cout << "Enter Grades " << endl;
-        cin >> user[i];
+//This function will populate the array and store it
+void populateArray(double arrGrade[], int numOfGrades){
+    for(int i = 0; i < numOfGrades; i++){
+        cout << "Enter the number of Grades: " << endl;
+        cin >> arrGrade[i];
     }
 }
 
-// //This function sorts the user array
-// void sortArray(int user[20], int size){
-//     //sorted array (Accending)
-//     for(int i = 0; i < size; i++)
-//     {
-//         for(int z=i+1;z<size;z++)
-//         {
-//             if(user[i]>user[z])
-//             {
-//                 int y = user[i];
-//                 user[i] = user[z];
-//                 user[z] = y;
-//             }
-//         }    
-//     }
-// }
+//This function will sort the array.
+void sortArray(double arrGrade[], int numOfGrades){
+    for(int i = 0; i < numOfGrades; i++)
+    {
+        for(int z=i+1;z<numOfGrades;z++)
+        {
+            if( arrGrade[i]> arrGrade[z])
+            {
+                int y = arrGrade[i];
+                arrGrade[i] = arrGrade[z];
+                arrGrade[z] = y;
+             }
+       }    
+    }
+}
