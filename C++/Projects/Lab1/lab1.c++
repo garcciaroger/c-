@@ -19,7 +19,7 @@ int main(){
             cout << "Please Enter a total of no more than 20 grades! : " << endl;
             cin >> numOfGrades;
         }
-    }while(numOfGrades < 0 || numOfGrades > 100);
+    }while(numOfGrades < 0 || numOfGrades > 20);
 
     //Populate Array
     populateArray(arrGrade, numOfGrades);
@@ -34,6 +34,7 @@ int main(){
 
     cout << "The median is: " << median << endl;
 
+    return 0;
 }
 //This function will populate the array and store it
 void populateArray(double arrGrade[], int numOfGrades){
