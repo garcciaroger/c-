@@ -31,7 +31,6 @@ int main(){
     }
     //calculate the median of the array
     median = calculateMedian(arrGrade, numOfGrades, median);
-
     cout << "The median is: " << median << endl;
 
     return 0;

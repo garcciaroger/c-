@@ -2,50 +2,75 @@
 #include <string>
 using namespace std;
 
-void studentGrades(int, double[]);
+
+class student{
+    public:
+        string firstName;
+        string lastName;
+        int IdNumber;
+        int numOfGrades;
+        double grades[];
+};
+
+void populateArray(int, double[]);
 
 int main(){
 
-    //variables to hold student grades.
-    int numberOfGrades = 0;
+    //Student Object
+    student stuFristName;
+    student stuFristLast;
+    student id;
+    student numGrades;
+    student arrGrades;
 
-    //array to store student grades.
-    double arrayGrade[numberOfGrades];
+    //Variables
+    int numberOfGrades = numGrades.numOfGrades;
+    double arrayGrades = arrGrades.grades[0];
 
-    //This functction will get student names and populate the grades into the array
-    studentGrades(numberOfGrades, arrayGrade);
+    //Other
+    double average = 0;
 
-    return 0;
-}
+    //Entering the student basic info
+    cout << "Enter Student First Name " << endl;
+    cin >> stuFristName.firstName;
+    cout << "Enter Student Last Name " << endl;
+    cin >> stuFristLast.lastName;
+    cout << "Enter ID" << endl;
+    cin >> id.IdNumber;
+    cout << endl;
 
-void studentGrades(int numOfGrades, double arrGrade[]){
+    //Starting to calculate the array size
+    cout << "We will now enter the students grade" << endl;
+    cout << "How many grades are you entering? No more than 30" << endl;
+    cin >> numberOfGrades;
 
-    //Start calculating the size of the array.
-    cout <<"How many grades are you going to enter? Limit to 30. " << endl;
-    cin >> numOfGrades;
-
+    //Verify Grades that its no more than 30.
     do{
-        if(numOfGrades > 30){
-            cout << "No more than 30 Grades. " << endl;
-            cin >> numOfGrades;
-        }else(numOfGrades <= 0){
-            cout << "Enter a number greater than 0 " << endl;
-             cin >> numOfGrades;
+        if(numberOfGrades < 0 || numberOfGrades > 30){
+            cout << "Please Enter a total of no more than 20 grades! : " << endl;
+            cin >> numberOfGrades;
         }
-    } while(numOfGrades < 0 || numOfGrades > 30);
+    }while(numberOfGrades < 0 || numberOfGrades > 20);
 
-    //Start populating the array.
-    for(int i = 0; i < numOfGrades; i++){
-        cout << "Enter Grade: " << endl;
-        cin >> arrGrade[i];
+    //user enters grades
+    populateArray(numberOfGrades, arrayGrades);
+    //This will calculate and return a average
+    calculateAverage(numberOfGrades, arrayGrades, average);
+
+
+
+    return 0; 
+}
+
+void populateArray(int numberOfGrades, double arrayGrades[]){
+    //User enters grade
+    for(int i = 0; i < numberOfGrades; i++){
+        cout << "Enter the grades: " << endl;
+        cin >> arrayGrades[i];
     }
-
-  
-
-
-
-
-
+}
+double calculateAverage(int numberOfGrades, double arrayGrades[], double average){
 
 
 }
+
