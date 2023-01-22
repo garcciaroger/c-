@@ -90,10 +90,14 @@ class employeeSalary{
             return incentives;
         }
     void totalCompensation(){
+        //Calculate total compensation
+        double totalComp = baseSalary + signOnBonus + stocks + incentives;
+
         cout << "Base Pay   :   $" << baseSalary  << endl;
         cout << "Sign-on    :   $" << signOnBonus << endl;
         cout << "Stocks     :   $" << stocks << endl;
         cout << "Incentives :   $" << incentives << endl;
+        cout << "Total Compensation:  $" << totalComp << endl;
     }
     employeeSalary(int salary, int bonus, int stock, int incent){
         baseSalary = salary;
