@@ -55,10 +55,20 @@ int main()
     L5FSD.totalCompensation();
     cout << endl;
     
-        
+    employee1.AskForPromotion();
+    employee3.AskForPromotion();
+    cout << endl;
 
+    Developer d=Developer("Roger", "Lockheed Martin", "F-22A Software Engineer", 24, "C++");
+    d.FixBug();
+    d.FixBug();
+    d.FixBug();
+    d.AskForPromotion();
+    cout << endl;
 
-
+    Teacher x = Teacher("Svensson", "University of Washington", "Teacher", 34, "Computer Science");
+    x.prepareLesson();
+    x.AskForPromotion();
 
 
 }

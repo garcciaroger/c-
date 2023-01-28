@@ -1,12 +1,17 @@
 #include <iostream>
 using namespace std;
+//Abstraction is "hiding" the complex logic
+class AbstractEmployee{
+    virtual void AskForPromotion() = 0;
+};
 
-class Employee{ // Class
+class Employee:AbstractEmployee{ // Class
     private:     //Acess specifier
-        string Name;        //Attribute of the class
         string Company;     //Attribute of the class
         string Occupation;  //Attribute of the class
         int Age;
+    protected:
+         string Name;        //Attribute of the class
     public: //Encapsulation is getting acess to private classes
         //Set and Get Name
         void setName(string name){
@@ -52,7 +57,43 @@ class Employee{ // Class
             Occupation = occupation;
             Age = age;
         }
+        //Abstraction class asking for a promotion
+        void AskForPromotion(){
+            if(Age > 30)
+                cout << Name << " got promoted!" << endl;
+            else
+                cout << Name << " No Promotion for you." << endl;
+        }
 };
+
+class Developer: public Employee{ // Subclass of Employee (Inheritance)
+    public:
+        string FavProgrammingLanguage;
+        Developer(string name, string company, string occupation, int age, string langaunge)
+            :Employee(name, company, occupation, age )
+        {
+            FavProgrammingLanguage = langaunge;
+        }
+        void FixBug(){
+            cout << Name << " fixed bug using " << FavProgrammingLanguage << endl;
+        }
+
+
+};
+class Teacher:public Employee{
+    public:
+        string Subject;
+        void prepareLesson(){
+            cout << Name << " is preparing " << Subject << " lesson " << endl;
+        }
+        Teacher(string name, string company, string occupation, int age, string subject)
+            :Employee(name, company, occupation, age)
+        {
+            Subject = subject;
+        }
+        
+};
+
 
 class employeeSalary{
     private:
