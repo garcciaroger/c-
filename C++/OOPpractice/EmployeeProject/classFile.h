@@ -80,7 +80,7 @@ class Developer: public Employee{ // Subclass of Employee (Inheritance)
 
 
 };
-class Teacher:public Employee{
+class Teacher:public Employee{ //Teacher is subclass of employee
     public:
         string Subject;
         void prepareLesson(){
